@@ -1,9 +1,9 @@
 {
   "name": "react-typescript",
   "version": "1.0.0",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/agliga/react-typescript"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agliga/react-typescript"
   },
   "description": "React app built with typescript",
   "main": "index.js",
@@ -13,6 +13,10 @@
   "author": "agliga",
   "license": "GPL-3.0",
   "dependencies": {
+    "del": "^2.2.0",
+    "gulp-typescript": "^2.10.0",
+    "gulpclass": "0.0.8",
+    "lodash": "^4.0.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.0-rc5",
