@@ -5,28 +5,34 @@
 
 import gulp from 'gulp';
 import {Gulpclass, Task} from "gulpclass/Decorators";
-import ts from 'gulp-typescript';
-import del from 'del';
-import {lib} from 'gulpfile.js/lib'
+let ts = require('gulp-typescript');
+let del = require('del');
 
-@Gulpclass
+let lib = {
+    app: 'app',
+    src: 'app/src',
+    out: 'app/out'
+};
+
+
+@Gulpclass()
 export class GulpFile {
 
-    @Task
+    @Task()
     clean() {
         return del(lib.out);
     }
 
-    @Task
+    @Task()
     compile() {
         let tsProject = ts.createProject('tsconfig.json'),
             tsResult = tsProject.src() // instead of gulp.src(...)
                 .pipe(ts(tsProject));
 
-        return tsResult.js.pipe(gulp.dest('app/out'));
+        return tsResult.js.pipe(gulp.dest(lib.out));
     }
 
-    @Task
+    @Task()
     default() {
         return ['clean', 'compile'];
     }
